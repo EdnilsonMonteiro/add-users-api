@@ -3,13 +3,13 @@ import React, { useState, useEffect } from 'react';
 import { Card, Row, Col, Button } from 'react-bootstrap';
 import { format } from 'date-fns';
 
-function ShowCard() {
+function ShowCard({ results }) {
     const [users, setUsers] = useState();
     
     const searchUsers = async () => {
         try {
             const response = await axios.get(
-                'https://api.randomuser.me/?results=3',     
+                `https://api.randomuser.me/?results=${results}`,     
             );
 
             console.log(response.data.results)
@@ -21,7 +21,7 @@ function ShowCard() {
 
     useEffect(() => {
         searchUsers();
-    }, [])
+    }, [results])
 
     //Função para formatar a data no formato "dd/mm/aaaa"
     const formatData = (date) => {
