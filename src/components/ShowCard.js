@@ -29,8 +29,8 @@ function ShowCard() {
     }
 
     return (
-        <>
-            {users !== undefined ? (
+        <> 
+            {users !== undefined ? ( //Mostra users se tiverem informações nele
                 users.map(user => {
                     const { gender, name, cell, picture, dob } = user
                     console.log(gender)
