@@ -1,13 +1,12 @@
-import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { Card, Button } from 'react-bootstrap';
 import { PlusSmIcon } from '@heroicons/react/solid';
 
-function AddNew({results, setResults}) {
+function AddNew({results, setResults, loadCards, setLoadCards}) {
     
-    const handleButtonClick = () => {
-        console.log(results)
-        setResults(results + 3);
+    const handleButtonClick = () => { //Adiciona 3 novos usuários
+        console.log("teste")
+        setLoadCards(!loadCards);
     }
 
     return (

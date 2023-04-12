@@ -1,23 +1,27 @@
 import logo from './logo.svg';
 import React, { useState } from 'react';
+import axios from 'axios';
 import './App.css';
 import { Row } from 'react-bootstrap';
 import Layout from './components/Layout';
 import ShowCard from './components/ShowCard';
-import AddNew from './components/AddNew'
-
+import AddNew from './components/AddNew';
+import ShowModal from './components/ShowModal';
 
 function App() {
 
   const [results, setResults] = useState(3) //Estado que mostra quantos users aparecerão
+  const [loadCards, setLoadCards] = useState(false)
 
   return (
     <Layout>
       <div className="App">
-        <AddNew results={results} setResults={setResults}/>
+        <AddNew loadCards={loadCards} setLoadCards={setLoadCards} results={results} setResults={setResults}/>
         <Row> 
-          <ShowCard results={results} /> 
+          <ShowCard loadCards={loadCards} results={results} /> 
         </Row>
+
+        <ShowModal />
         
       </div>
     </Layout>
