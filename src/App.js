@@ -10,18 +10,32 @@ import ShowModal from './components/ShowModal';
 
 function App() {
 
-  const [results, setResults] = useState(3) //Estado que mostra quantos users aparecerão
-  const [loadCards, setLoadCards] = useState(false)
+  const [loadCards, setLoadCards] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false); // Função para fechar o modal
+  };
 
   return (
     <Layout>
       <div className="App">
-        <AddNew loadCards={loadCards} setLoadCards={setLoadCards} results={results} setResults={setResults}/>
+        <AddNew 
+          loadCards={loadCards} setLoadCards={setLoadCards} 
+        />
         <Row> 
-          <ShowCard loadCards={loadCards} results={results} /> 
+          <ShowCard 
+            isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}  
+            loadCards={loadCards} 
+          /> 
         </Row>
 
-        <ShowModal />
+        
+        {isModalOpen && 
+        <ShowModal 
+          setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen} 
+          onClose={handleCloseModal} 
+        /> }
         
       </div>
     </Layout>

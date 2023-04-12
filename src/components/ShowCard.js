@@ -3,8 +3,9 @@ import React, { useState, useEffect } from 'react';
 import { Card, Row, Col, Button } from 'react-bootstrap';
 import { format } from 'date-fns';
 
-function ShowCard({ results, loadCards }) {
+function ShowCard({ loadCards, setIsModalOpen }) {
     const [users, setUsers] = useState([]);
+    const [results, setResults] = useState(3); //Estado que mostra quantos users aparecerão
 
     const searchUsers = async () => {
         try {
@@ -28,12 +29,16 @@ function ShowCard({ results, loadCards }) {
         return format(new Date(date), 'dd/MM/yyyy');
     }
 
+    const handleOpenModal = () => {
+        console.log('teste')
+        setIsModalOpen(true); // Função para abrir o modal
+    };
+
     return (
         <>
             {users.length > 0 ? ( //Mostra users se tiverem informações nele
                 users.map(user => {
                     const { gender, name, cell, picture, dob, id } = user;
-                    console.log(id.value)
 
                     return (
                         <Col lg="4" md="6" sm="12" key={id.value}>
@@ -53,7 +58,7 @@ function ShowCard({ results, loadCards }) {
                                     <Card.Subtitle className="mb-2 text-muted">{formatData(dob.date)}</Card.Subtitle>
                                     <Card.Subtitle className="mb-2 text-muted">{cell}</Card.Subtitle>
 
-                                    <button className="bg-violet-400 hover:bg-violet-500 text-white font-bold py-2 px-4 mt-1 rounded-full focus:outline-none focus:shadow-outline">View Profile</button>
+                                    <button onClick={handleOpenModal} className="bg-violet-400 hover:bg-violet-500 text-white font-bold py-2 px-4 mt-1 rounded-full focus:outline-none focus:shadow-outline">View Profile</button>
                                 </div>
                             </Card>
                         </Col>
