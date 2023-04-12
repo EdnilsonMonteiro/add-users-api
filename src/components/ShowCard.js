@@ -56,7 +56,7 @@ function ShowCard({ results }) {
                                             
                                           
 
-                                    <button className="bg-violet-400 hover:bg-violet-500 text-white font-bold py-2 px-4 mt-1 rounded focus:outline-none focus:shadow-outline">View Profile</button>
+                                    <button className="bg-violet-400 hover:bg-violet-500 text-white font-bold py-2 px-4 mt-1 rounded-full focus:outline-none focus:shadow-outline">View Profile</button>
                                 </div>
                             </Card>
                         </Col>
