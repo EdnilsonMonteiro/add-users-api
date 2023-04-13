@@ -1,5 +1,5 @@
 # Add-users
-Neste projeto faço requisições à API 'https://api.randomuser.me/' e ao clicar no botão de ADD NEW são adicionados três usuários à página. Você verá as informações de nome, data de nascimento e número de telefone. Ao clicar em 'View Profile' um modal aparecerá na tela e diversas outras informações aparecerão. Se clicar em 'Fechar' o modal é fechado e você poderá ver outros usuários.
+Neste projeto é possível fazer requisições à API 'https://api.randomuser.me/' e ao clicar no botão de ADD NEW são adicionados três usuários à página. Você verá as informações de nome, data de nascimento e número de telefone. Ao clicar em 'View Profile' um modal aparecerá na tela e diversas outras informações aparecerão. Se clicar em 'Fechar' o modal é fechado e você poderá ver outros usuários.
 
 # Getting Started with Create React App
 
