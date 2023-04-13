@@ -45,7 +45,7 @@ function ShowModal({isModalOpen, setIsModalOpen, users, setUsers, selectedUser, 
                     className="bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline mb-2"
                     onClick={handleCloseModal}
                     >
-                    Fechar Modal
+                    Fechar
                 </button>
             </div>
         </div>
