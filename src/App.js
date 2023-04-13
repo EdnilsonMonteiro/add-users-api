@@ -1,6 +1,4 @@
-import logo from './logo.svg';
 import React, { useState } from 'react';
-import axios from 'axios';
 import './App.css';
 import { Row } from 'react-bootstrap';
 import Layout from './components/Layout';
@@ -8,8 +6,11 @@ import ShowCard from './components/ShowCard';
 import AddNew from './components/AddNew';
 import ShowModal from './components/ShowModal';
 
+
 function App() {
 
+  const [users, setUsers] = useState([]);
+  const [selectedUser, setSelectedUser] = useState([]);
   const [loadCards, setLoadCards] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -25,6 +26,8 @@ function App() {
         />
         <Row> 
           <ShowCard 
+            selectedUser={selectedUser} setSelectedUser={setSelectedUser}
+            users={users} setUsers={setUsers}
             isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}  
             loadCards={loadCards} 
           /> 
@@ -33,6 +36,8 @@ function App() {
         
         {isModalOpen && 
         <ShowModal 
+          selectedUser={selectedUser} setSelectedUser={setSelectedUser}
+          users={users} setUsers={setUsers}
           setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen} 
           onClose={handleCloseModal} 
         /> }
